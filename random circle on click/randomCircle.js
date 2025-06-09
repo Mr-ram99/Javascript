@@ -13,7 +13,10 @@ document.addEventListener("click", (e) => {
   let random = Math.floor(Math.random() * 1000);
 
   //just to keep circles in visible screen
-  while (random > window.innerWidth - radius * 2) {
+  while (
+    random > window.innerWidth - radius * 2 &&
+    random > window.innerHeight - radius * 2
+  ) {
     random = Math.floor(Math.random() * 1000);
   }
 
@@ -45,9 +48,9 @@ document.addEventListener("click", (e) => {
       ) <
       radius * 2
     ) {
-      console.log("Intersect");
+      alert("Intersect");
     } else {
-      console.log("Not intersect");
+      alert("Not intersect");
     }
   }
 });
